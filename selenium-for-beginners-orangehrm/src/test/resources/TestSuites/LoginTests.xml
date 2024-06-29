@@ -1,0 +1,59 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Debug" verbose="1">
+
+	<test name="PositiveTests">
+		<parameter name="browser" value="chrome" />
+		<groups>
+			<run>
+				<include name="positiveTests" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.opensourcedemo.orangehrmlive.LoginTests" />
+		</classes>
+	</test>
+
+	<test name="NegativeUsernameTests">
+		<parameter name="username" value="incorrectUsername" />
+		<parameter name="password" value="admin123" />
+		<parameter name="expectedMessage" value="Invalid credentials" />
+		<classes>
+
+			<class name="com.opensourcedemo.orangehrmlive.LoginTests">
+				<methods>
+					<include name="negativeLoginTest"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="NegativePasswordTests">
+		<parameter name="browser" value="chrome" />
+		<parameter name="username" value="Admin" />
+		<parameter name="password" value="incorrectPassword!" />
+		<parameter name="expectedMessage" value="Invalid credentials" />
+		<classes>
+			<class name="com.opensourcedemo.orangehrmlive.LoginTests">
+				<methods>
+					<include name="negativeLoginTest"></include>
+				</methods>
+
+			</class>
+		</classes>
+	</test>
+
+	<test name="NegativeNoUserPasswordTests">
+		<parameter name="browser" value="firefox" />
+		<groups>
+			<run>
+				<include name="negativeNoUserPasswordTests" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.opensourcedemo.orangehrmlive.LoginTests" />
+		</classes>
+	</test>
+
+</suite>
+
