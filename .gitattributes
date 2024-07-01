@@ -1,4 +1,5 @@
 *.html linguist-detectable=false
 *.css linguist-detectable=false
 *.js linguist-detectable=false
-*.java-with-maven linguist-detectable=true
+*.java linguist-detectable=true
+*.maven linguist-detectable=true
